@@ -32,6 +32,12 @@ main {
     background-size: cover;
     position: relative;
 }
+.hero-background-coraline {
+    height: 100%;
+    background: url('https://image.tmdb.org/t/p/original/hofnlIyF6bePkgQOpcuRWLvzf15.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
 
 .hero-background::after {
     content: '';
