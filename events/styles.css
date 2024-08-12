@@ -1,0 +1,256 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+    position: relative;
+    min-height: 100vh;
+}
+
+main {
+    padding: 0;
+    position: relative;
+    z-index: 1; /* Asegura que el main esté por encima del footer */
+}
+
+.event-hero {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.hero-background {
+    height: 100%;
+    background: url('https://image.tmdb.org/t/p/original/fSLrQ0TyUYeoF1bhB8g9hORBQZk.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+.hero-background-coraline {
+    height: 100%;
+    background: url('https://image.tmdb.org/t/p/original/hofnlIyF6bePkgQOpcuRWLvzf15.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 1) 100%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #fff;
+    z-index: 2; /* Asegura que el logo esté por encima del degradado */
+}
+
+.event-logo {
+    max-width: 300px;
+    height: auto;
+    display: block;
+}
+
+.event-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Estilo para los detalles del evento */
+.event-detail {
+    background: #ffffff; /* Fondo blanco para el contenedor */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 80px; /* Mueve el contenedor para asegurar espacio para el footer */
+}
+
+.gallery {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info, .files, .tickets, .extra-info {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.info p, .files p, .tickets p, .extra-info p {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.info .icon, .files .icon, .tickets .icon, .extra-info .icon {
+    margin-right: 15px;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.file-list, .tickets-list {
+    list-style: none;
+    padding: 0;
+}
+
+.file-list li, .tickets-list li {
+    margin: 5px 0;
+}
+
+.file-list a, .tickets-list a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.file-list a:hover, .tickets-list a:hover {
+    text-decoration: underline;
+}
+
+.buttons, .tickets {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background: #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+footer {
+    background: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    color: #333;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+    }
+
+    .gallery img {
+        max-width: 100%;
+    }
+
+    .hero-content {
+        padding: 10px;
+    }
+
+    .event-title {
+        font-size: 1.8em;
+    }
+
+    .event-logo {
+        max-width: 200px;
+    }
+}
+/* Resto del CSS */
+
+.file-plus {
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+.file-plus p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.file-plus .icon {
+    margin-right: 15px;
+    color: #333;
+    font-size: 1.2em;
+}
+
+#unlock-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: not-allowed;
+}
+
+#unlock-button:enabled {
+    cursor: pointer;
+    background-color: #0056b3;
+}
+
+.countdown {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #333;
+}
+/* Resto del CSS */
+
+footer {
+    padding: 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+    position: relative;
+    margin-top: 50px; /* Asegura que el contenido no se superponga con el footer */
+}
+
+.footer-content {
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.email-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.email-btn:hover {
+    background-color: #0056b3;
+}
